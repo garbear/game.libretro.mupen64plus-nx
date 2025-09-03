@@ -32,7 +32,19 @@ endif()
 
 if(CORE_SYSTEM_NAME STREQUAL windows)
   find_package(MinGW REQUIRED)
-  message(FATAL_ERROR "CPU: ${CPU}")
+  
+  function(print_all_variables)
+    get_cmake_property(_vars VARIABLES)
+    list(SORT _vars)
+    foreach(v ${_vars})
+      message(STATUS "${v} = ${${v}}")
+    endforeach()
+  endfunction()
+
+  print_all_variables()
+
+  message(FATAL_ERROR here)
+
   if(CPU STREQUAL arm64)
     set(MSYSTEM MINGW64)
   else()
