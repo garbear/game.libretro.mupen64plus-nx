@@ -32,7 +32,7 @@ endif()
 
 if(CORE_SYSTEM_NAME STREQUAL windows)
   find_package(MinGW REQUIRED)
-  message(FATAL_ERROR "CORE_SYSTEM_NAME: ${CORE_SYSTEM_NAME}")
+  message(FATAL_ERROR "CPU: ${CPU}")
   if(CPU STREQUAL arm64)
     set(MSYSTEM MINGW64)
   else()
