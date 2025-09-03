@@ -32,7 +32,7 @@ endif()
 
 if(CORE_SYSTEM_NAME STREQUAL windows)
   find_package(MinGW REQUIRED)
-  message(FATAL_ERROR "CPU: ${CPU}")
+  message(FATAL_ERROR "CMAKE_SYSTEM_PROCESSOR: ${CMAKE_SYSTEM_PROCESSOR}")
   if(CPU STREQUAL arm64)
     set(MSYSTEM MINGW64)
   else()
